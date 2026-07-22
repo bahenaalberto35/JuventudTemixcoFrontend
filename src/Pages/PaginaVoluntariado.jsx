@@ -1,12 +1,12 @@
 import Encabezado from "../Components/Structure/Encabezado";
 import './ModalGlobal.css';
 import InfoVoluntariado from "../Components/Informacion/InfoVoluntariado";
-import Voluntariado from "../Components/Informacion/Voluntariado";
+import Voluntariado from "../Components/Informacion/voluntariado";
 import voluntariado1 from "../Img/voluntariado1.png";
 import voluntariado2 from "../Img/voluntariado2.png";
 import voluntariado3 from "../Img/voluntariado3.png";
 import voluntariado4 from "../Img/voluntariado4.png";
-import VoluntariadoRegis from "../Components/Informacion/VoluntariadoRegis";
+import VoluntariadoRegis from "../Components/Informacion/voluntariadoRegis";
 import PieDePagina from "../Components/Structure/PieDePagina.jsx";
 
 export default function PaginaVoluntariado() {
