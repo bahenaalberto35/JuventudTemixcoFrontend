@@ -6,6 +6,7 @@ import Input from "../Components/Inputs/Input.jsx";
 import "./ModalGlobal.css";
 import { enviarDatos } from "../Utils/api.js";
 import {AmountButton} from "../Components/Buttons/AmountButton.jsx";
+import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
 
 
 export default function Donaciones () {
