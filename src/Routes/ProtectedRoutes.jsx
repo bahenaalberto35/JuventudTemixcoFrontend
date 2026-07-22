@@ -1,6 +1,4 @@
 import { Navigate, Outlet } from "react-router-dom";
-import { useContext } from "react";
-import { AuthContext } from "../Auth/AuthContext.jsx";
 import { useEffect } from "react";
 
 function ProtectedRoutes({ allowedRoles }) {
@@ -35,8 +33,7 @@ function ProtectedRoutes({ allowedRoles }) {
     const hasAccess = allowedRoles.some(rol =>{
         const rolUpper = rol.toUpperCase();
 
-        return rolUpper === userRol || userRol.includes
-        (rolUpper);
+        return rolUpper === userRol || userRol.includes(rolUpper);
     });
 
    
