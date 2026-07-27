@@ -17,6 +17,8 @@ export default function Donaciones () {
     const navigate = useNavigate();
     const [procesandoPago, setProcesandoPago] = useState(false);
 
+    const PAYPAL_ID = import.meta.env.VITE_PAYPAL_CLIENT_ID || "ARxTw1vanVmlKpojDG26Zyd3t2yGBIyvx02ihKZ0y14jkKg41DSADFn2uVtoAvJN1SkjBIDGdMxK_r2l";
+
     const {
         register,
         handleSubmit,
@@ -35,7 +37,7 @@ export default function Donaciones () {
     return (
         <PayPalScriptProvider
             options={{
-                "client-id": import.meta.env.VITE_PAYPAL_CLIENT_ID,
+                "client-id": PAYPAL_ID,
                 currency: "MXN"
             }}
         >
