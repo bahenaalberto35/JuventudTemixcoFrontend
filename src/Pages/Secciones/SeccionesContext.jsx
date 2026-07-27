@@ -1,7 +1,7 @@
 import { createContext, useContext, useState, useEffect } from 'react';
 import {alertaError} from "../../Utils/alerts.js";
 
-const BASE_URL = "http://localhost:8080";
+const BASE_URL = "https://api.juventudxtemixco.org";
 
 const SeccionesContext = createContext(null);
 

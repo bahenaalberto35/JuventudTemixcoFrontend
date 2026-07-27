@@ -9,7 +9,7 @@ import {useEffect, useState} from "react";
 
 export default function DetalleSeccion() {
 
-    const BASE_URL = "http://localhost:8080";
+    const BASE_URL = "https://api.juventudxtemixco.org";
 
     const { slug } = useParams();
     const { obtenerPorSlug, loading } = useSecciones();
