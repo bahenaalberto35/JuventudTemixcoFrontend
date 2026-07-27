@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import Pagination from "../Components/Structure/Pagination.jsx";
 import { Header } from "../Components/Structure/Header.jsx";
 import BeneficiarioCard from "../Components/Admin/BeneficiarioCard.jsx";
-import { alertaExito, alertaCamposVacios } from "../Utils/alerts";
+import { alertaExito, alertaCamposVacios, alertaError } from "../Utils/alerts";
 import "./ModalGlobal.css";
 import Input from "../Components/Inputs/Input.jsx";
 import { obtenerDatos } from "../Utils/api.js";
