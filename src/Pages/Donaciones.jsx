@@ -17,7 +17,7 @@ export default function Donaciones () {
     const navigate = useNavigate();
     const [procesandoPago, setProcesandoPago] = useState(false);
 
-    const PAYPAL_ID = import.meta.env.VITE_PAYPAL_CLIENT_ID || "ARxTw1vanVmlKpojDG26Zyd3t2yGBIyvx02ihKZ0y14jkKg41DSADFn2uVtoAvJN1SkjBIDGdMxK_r2l";
+    const PAYPAL_ID = import.meta.env.VITE_PAYPAL_CLIENT_ID || "ARxTw1vanVmlKpojDG26Zyd3t2yGBIyvx02ihKZ0y14jkKg41DSADFn2uVtoAvJNlSkjBIDGdMxK_r2l";
 
     const {
         register,
