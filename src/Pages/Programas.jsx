@@ -10,7 +10,7 @@ import "./ModalGlobal.css";
 
 import { obtenerDatos, eliminarDatos} from "../Utils/api.js";
 
-const BASE_URL = "http://localhost:8080";
+const BASE_URL = "https://api.juventudxtemixco.org";
 
 const MIMES_PERMITIDOS = [
     'image/jpeg',
