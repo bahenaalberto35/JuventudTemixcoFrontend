@@ -33,7 +33,7 @@ export default function BeneficiarioCard({
                 {/* Foto */}
                 <div className="user-card__imagen-wrapper">
                     {imagen ? (
-                        <img src={`data:image/jpeg;base64,${imagen}`}  alt={nombreCompleto} className="user-card__imagen" />
+                        <img src={imagen} alt={nombreCompleto} className="user-card__imagen" />
                     ) : (
                         <div className="user-card__imagen-placeholder">
                             {/* Silueta */}
