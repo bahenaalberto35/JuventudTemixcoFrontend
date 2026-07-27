@@ -20,7 +20,7 @@ export default function RegistroBeneficiarios() {
            const [listaMunicipios, setListaMunicipios] = useState([]);
            
            useEffect(() => {
-            fetch('http://localhost:8080/api/beneficiarios/Municipios')
+            fetch('https://api.juventudxtemixco.org/api/beneficiarios/Municipios')
             .then(res => res.json())
             .then(data => setListaMunicipios(data));}, []);
 
@@ -236,7 +236,7 @@ export default function RegistroBeneficiarios() {
                                                             message: "Formato de correo inválido"},
                                                             validate: async (value) => {
                                                                 try {
-                                                                    const response = await fetch(`http://localhost:8080/api/beneficiarios/verificarCorreo?email=${encodeURIComponent(value)}`);
+                                                                    const response = await fetch(`https://api.juventudxtemixco.org/api/beneficiarios/verificarCorreo?email=${encodeURIComponent(value)}`);
                                                                     const existe = await response.json();
                                                                     return !existe || "Este correo ya está registrado";
                                                                 } catch (error) {

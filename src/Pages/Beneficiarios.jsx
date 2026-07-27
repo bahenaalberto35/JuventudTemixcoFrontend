@@ -54,7 +54,7 @@ useEffect(() => {
                register("id");
            
                useEffect(() => {
-                           fetch('http://localhost:8080/api/beneficiarios/Municipios')
+                           fetch('https://api.juventudxtemixco.org/api/beneficiarios/Municipios')
                            .then(res => res.json())
                            .then(data => setListaMunicipios(data));}, []);
            
