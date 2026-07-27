@@ -47,7 +47,7 @@ function VerifyCode() {
     const handleVerify = async (code) => {
         setLoading(true);
         try {
-            const response = await fetch("http://localhost:8080/api/auth/validarCodigo", {
+            const response = await fetch("https://api.juventudxtemixco.org/api/auth/validarCodigo", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ correo, codigo: code }),

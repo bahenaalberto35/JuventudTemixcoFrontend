@@ -95,7 +95,7 @@ function NewPassword() {
 
         setLoading(true);
         try {
-            const response = await fetch("http://localhost:8080/api/auth/actualizarPassword", {
+            const response = await fetch("https://api.juventudxtemixco.org/api/auth/actualizarPassword", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ correo, codigo, contrasena: password }),
