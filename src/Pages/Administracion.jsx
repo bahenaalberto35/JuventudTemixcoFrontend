@@ -179,6 +179,11 @@ export default function Administracion() {
                 delete data.confirmarPassword;
             }
 
+            const datosParaEnviar = { ...data };
+            delete datosParaEnviar.confirmarPassword;
+
+            console.log("Datos enviados al servidor:", datosParaEnviar);
+
             if (isEditing && AdministradorSeleccionado) {
                 await actualizarDatos(`/api/admin/${AdministradorSeleccionado.id}`, data);
                 alertaExito("Administrador actualizado correctamente");
