@@ -24,6 +24,7 @@ import Alianzas from "./Pages/Alianzas";
 import Objetivos from "./Pages/Objetivos.jsx";
 
 import ProtectedRoutes from "./Routes/ProtectedRoutes.jsx";
+import PublicOnlyRoutes from "./Routes/PublicOnlyRoutes.jsx";
 import AdminLayout from "./Routes/AdminLayout.jsx";
 import {SeccionesProvider} from "./Pages/Secciones/SeccionesContext.jsx";
 
@@ -40,13 +41,8 @@ export default function App() {
                 {/*Rutas publicas*/}
                 <Route path="/" element={<PantallaPrincipal />} />
                 <Route path="/voluntariado" element={<PaginaVoluntariado />} />
-                <Route path="/login" element={<Login />} />
                 <Route path="/registroBeneficiarios" element={<RegistroBeneficiarios />} />
                 <Route path="/registroAfiliados" element={<RegistroAfiliados />} />
-
-                <Route path="/forgotPassword" element={<ForgotPassword />} />
-                <Route path="/newPassword" element={<NewPassword />} />
-                <Route path="/verify" element={<VerifyCode />} />
 
                 <Route path="/donaciones" element={<Donaciones/>} />
 
@@ -66,6 +62,14 @@ export default function App() {
                         </SeccionesProvider>
                     }
                 />
+
+                {/*Invitados*/}
+                <Route element={<PublicOnlyRoutes />}>
+                    <Route path="/login" element={<Login />} />
+                    <Route path="/forgotPassword" element={<ForgotPassword />} />
+                    <Route path="/newPassword" element={<NewPassword />} />
+                    <Route path="/verify" element={<VerifyCode />} />
+                </Route>
 
                 {/*Rutas privadas*/}
                 <Route

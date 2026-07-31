@@ -83,6 +83,27 @@ export const confirmarEliminar = async () => {
     return resultado.isConfirmed;
 };
 
+export const alertaMasInformacion = () => {
+    return swalBase.fire({
+        icon: "info",
+        title: "Más información",
+        html: `
+            <p>
+                Tu apoyo directo nos permite impulsar programas sociales.
+            </p>
+            <br>
+            <p>
+                Si deseas conocer a detalle el seguimiento y el impacto de tu aportación, 
+                déjanos tus datos  en nuestro <a href="https://wa.me/527772578970" target="_blank" style="text-decoration: none; color: #400040; font-weight: bold;">WHATSAPP</a>  o números que aparecen en nuestra 
+                pagina y nos pondremos en contacto contigo para atenderte personalmente
+            </p>
+            <br>
+            <strong>Cada peso cuenta.</strong>
+        `,
+        confirmButtonText: "Cerrar"
+    });
+};
+
 
 export const toast = Swal.mixin({
     toast: true,

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import { alertaAgradecimiento, alertaError } from "../Utils/alerts";
+import { alertaAgradecimiento, alertaError, alertaMasInformacion } from "../Utils/alerts";
 import Input from "../Components/Inputs/Input.jsx";
 import "./ModalGlobal.css";
 import { enviarDatos } from "../Utils/api.js";
@@ -16,6 +16,8 @@ export default function Donaciones () {
     const [loading, setLoading] = useState(true);
     const navigate = useNavigate();
     const [procesandoPago, setProcesandoPago] = useState(false);
+
+    const PAYPAL_ID = import.meta.env.VITE_PAYPAL_CLIENT_ID || "ARxTw1vanVmlKpojDG26Zyd3t2yGBIyvx02ihKZ0y14jkKg41DSADFn2uVtoAvJNlSkjBIDGdMxK_r2l";
 
     const {
         register,
@@ -35,7 +37,7 @@ export default function Donaciones () {
     return (
         <PayPalScriptProvider
             options={{
-                "client-id": import.meta.env.VITE_PAYPAL_CLIENT_ID,
+                "client-id": PAYPAL_ID,
                 currency: "MXN"
             }}
         >
@@ -44,6 +46,16 @@ export default function Donaciones () {
                     <div>
                         <h1 className="donaciones-title">Donar</h1>
                         <h2 className="donaciones-welcome">Tu aportación ayuda a financiar nuestros programas y actividades en beneficio de la comunidad.</h2>
+                        <div style={{ textAlign: "center", marginTop: "15px" }}>
+                            <button
+                                type="button"
+                                className="btn-cancelar"
+                                style={{ width: "auto", padding: "8px 20px" }}
+                                onClick={alertaMasInformacion}
+                            >
+                                Más información
+                            </button>
+                        </div>
                     </div>
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <div className="form-container">
