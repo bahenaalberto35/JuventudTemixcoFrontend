@@ -9,7 +9,7 @@ export function AmountButton({ onChange, value }) {
     const [customValue, setCustomValue] = useState('');
     const [error, setError] = useState('');
 
-    const MIN_AMOUNT = 1.00;
+    const MIN_AMOUNT = 50.00;
 
 
     useEffect(() => {
