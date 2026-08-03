@@ -159,7 +159,7 @@ export default function Donaciones () {
                                 </div>
 
 
-                                <div style={{ marginTop: "20px" }}>
+                                <div style={{ marginTop: "20px", width: "100%" }}>
                                     <PayPalButtons
                                         style={{
                                             layout: "vertical",
