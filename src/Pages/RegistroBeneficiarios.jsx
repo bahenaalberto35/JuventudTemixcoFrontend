@@ -332,7 +332,7 @@ export default function RegistroBeneficiarios() {
                                     Cancelar
                                 </button>
                                 <button type="submit" className="btn-guardar">
-                                    Guardar
+                                    Beneficiario
                      </button>
                      </div>
             </div>
