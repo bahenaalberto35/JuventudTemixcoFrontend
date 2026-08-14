@@ -258,7 +258,7 @@ export default function RegistroAfiliados() {
                                     Cancelar
                                 </button>
                                 <button type="submit" className="btn-guardar">
-                                    Voluntariado
+                                    Guardar
                      </button>
                      </div>
             </div>
