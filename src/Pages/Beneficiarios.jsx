@@ -21,6 +21,7 @@ export default function Beneficiarios() {
     const [listaMunicipios, setListaMunicipios] = useState([]);
     const [terminoBusqueda, setTerminoBusqueda] = useState("");
     const [fechas, setFechas] = useState({ inicio: "", fin: "" });
+    const [cargando, setCargando] = useState(true);
 
     const handleDateChange = (tipo, valor) => {
         console.log(tipo, valor);
@@ -104,9 +105,9 @@ useEffect(() => {
     };
 
 
-    const cargarBeneficiarios = async (termino = "", fechaInicio = "", fechaFin = "") => {
+   const cargarBeneficiarios = async (termino = "", fechaInicio = "", fechaFin = "") => {
   try {
-     
+    setCargando(true); 
     let url = "/api/beneficiarios" 
 
     if(fechaInicio && fechaFin) {
@@ -114,12 +115,13 @@ useEffect(() => {
     }else if (termino) {
         url = `/api/beneficiarios/buscar?nombre=${encodeURIComponent(termino)}&apellidoP=${encodeURIComponent(termino)}&apellidoM=${encodeURIComponent(termino)}`
     }
-      
+     
     const data = await obtenerDatos(url);
-    
     setBeneficiarios(data || []);
   } catch (error) {
     console.error('Error al cargar beneficiarios:', error);
+  } finally {
+    setCargando(false); 
   }
 };
 
@@ -273,7 +275,9 @@ useEffect(() => {
     
                 <div className="grid-secciones" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '20px', marginTop: '30px' }}>
 
-                    {beneficiarios.length > 0 ? (
+                    {cargando ? (
+        <p>Cargando registros...</p> 
+    ) : beneficiarios.length > 0 ? (
         beneficiarios.map((b) => (
 
             <BeneficiarioCard
