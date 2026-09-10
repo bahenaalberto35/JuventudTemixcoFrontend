@@ -291,7 +291,8 @@ useEffect(() => {
                 municipio={b.municipio}
                 colonia={b.colonia}
                 correo={b.correo}
-                imagen={b.foto ? `data:image/jpeg;base64,${b.foto}` : null}
+                imagen={b.id ? `/api/beneficiarios/${b.id}/foto` : null}
+               // imagen={b.foto ? `data:image/jpeg;base64,${b.foto}` : null}
                 onEdit={() => handleEditar(b)}
                 onDelete={() => eliminarBeneficiario(b.id)}
                 onDownload={() => handleDownloadIndividual(b.id, b)}
